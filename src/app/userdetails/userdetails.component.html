@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <img [src]="userdetails.avatar_url" class="center">
+    </div>
+    <div class="col center">
+     <p><b>Name : &nbsp;</b> {{userdetails.name}}</p>
+     <p><b>Creation date : &nbsp;</b> {{userdetails.created_at | date}}</p>
+     <p><b>Login Name : &nbsp;</b> {{userdetails.login}}</p>
+     <button type="button" (click)="getdetails()" class="btn btn-success">Project Details</button>
+
+    </div>
+
+  </div>
+</div>
+
+
+<div class="list-group">
+  <a [href]="data.html_url" target="_blank" class="list-group-item list-group-item-action " *ngFor="let data of projectDetails">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{data.name}}</h5>
+      <small>{{data.updated_at| date}}</small>
+    </div>
+    <p class="mb-1"></p>
+    <small>{{data.id}}</small>
+  </a>
+
+</div>
